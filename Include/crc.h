@@ -30,40 +30,5 @@ protected:
 	size_t data_length;
 	uint8_t* data;
 };
-
-class CRC8 : public CRC<uint8_t>{
-public:
-	CRC8(uint8_t* input_message, size_t message_length);
-	uint8_t calculate_crc() override;
-	~CRC8();
-private:
-	void calculate_crc_table() override;
-	uint8_t *crc_8_table;
-	uint8_t polynom_8;
-};
-
-class CRC16 : public CRC<uint16_t>
-{
-public:
-	CRC16(uint8_t* input_message, size_t message_length);
-	uint16_t calculate_crc() override;
-	~CRC16();
-private:
-	void calculate_crc_table() override;
-	uint16_t* crc_16_table;
-	uint16_t polynom_16;
-};
-
-class CRC32 : public CRC <uint32_t>
-{
-public:
-	CRC32(uint8_t* input_message, size_t message_length);
-	uint32_t calculate_crc() override;
-	~CRC32();
-private:
-	void calculate_crc_table() override;
-	uint32_t* crc_32_table;
-	uint32_t polynom_32;
-};
 #endif
 
